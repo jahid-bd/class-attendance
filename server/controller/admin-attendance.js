@@ -32,27 +32,7 @@ const getDisable = async (req, res, next) => {
   }
 };
 
-const getStatus = async (req, res, next) => {
-  try {
-    const running = await AdiminAttendance.findOne({ status: "RUNNING" });
-
-    if (!running) throw error("Not Running", 404);
-
-    const started = addMinutes(new Date(running.createdAt), running.timeLimit);
-
-    if (isAfter(new Date(), started)) {
-      running.status = "COMPLETED";
-      await running.save();
-    }
-
-    return res.status(200).json(running);
-  } catch (e) {
-    next(e);
-  }
-};
-
 module.exports = {
   getDisable,
   getEnable,
-  getStatus,
 };
