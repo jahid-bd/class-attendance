@@ -1,1 +1,2 @@
 # class-attendance
+<p>This is a Backend Project. This an attendance system application. Students can create their own profile. Admin can see list of students and their attendances. Admin can enable and disable attend button also this button can be disabled based on a timer. Each time admin enable attend button, students can participate for only once. Each day, student will have a timesheet of attendace.</p>
